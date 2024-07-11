@@ -9,16 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        NavigationView {
+            VStack {
+                HStack {
+                    LogoImage(imageName: "Heart")
+                    
+                    Text("Inspire Love")
+                        .font(.title2)
+                }
+                .frame(alignment: .topLeading)
+                
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Button {
+                            print("share")
+                        } label: {
+                            Label("share", systemImage: "square.and.arrow.up")
+                        }
+                        
+                        Button {
+                            print("about us")
+                        } label: {
+                            Label("about us", systemImage: "info.circle")
+                        }
+
+                    }
+                    
+                }
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+}
+
+struct LogoImage: View {
+    
+    var imageName: String
+    
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 50, height: 50)
+        
+    }
 }
