@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F911B1B2C404B1E00EB7C7B /* InspireLoveAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F911B1A2C404B1E00EB7C7B /* InspireLoveAppApp.swift */; };
-		4F911B1D2C404B1E00EB7C7B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F911B1C2C404B1E00EB7C7B /* ContentView.swift */; };
+		4F911B1B2C404B1E00EB7C7B /* InspireLoveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F911B1A2C404B1E00EB7C7B /* InspireLoveApp.swift */; };
+		4F911B1D2C404B1E00EB7C7B /* ViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F911B1C2C404B1E00EB7C7B /* ViewControl.swift */; };
 		4F911B1F2C404B2000EB7C7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F911B1E2C404B2000EB7C7B /* Assets.xcassets */; };
 		4F911B222C404B2000EB7C7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F911B212C404B2000EB7C7B /* Preview Assets.xcassets */; };
 		4F911B2C2C404B2000EB7C7B /* InspireLoveAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F911B2B2C404B2000EB7C7B /* InspireLoveAppTests.swift */; };
@@ -36,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		4F911B172C404B1E00EB7C7B /* InspireLoveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspireLoveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F911B1A2C404B1E00EB7C7B /* InspireLoveAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspireLoveAppApp.swift; sourceTree = "<group>"; };
-		4F911B1C2C404B1E00EB7C7B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4F911B1A2C404B1E00EB7C7B /* InspireLoveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspireLoveApp.swift; sourceTree = "<group>"; };
+		4F911B1C2C404B1E00EB7C7B /* ViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControl.swift; sourceTree = "<group>"; };
 		4F911B1E2C404B2000EB7C7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F911B212C404B2000EB7C7B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4F911B272C404B2000EB7C7B /* InspireLoveAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspireLoveAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,8 +96,8 @@
 		4F911B192C404B1E00EB7C7B /* InspireLoveApp */ = {
 			isa = PBXGroup;
 			children = (
-				4F911B1A2C404B1E00EB7C7B /* InspireLoveAppApp.swift */,
-				4F911B1C2C404B1E00EB7C7B /* ContentView.swift */,
+				4F911B1A2C404B1E00EB7C7B /* InspireLoveApp.swift */,
+				4F911B1C2C404B1E00EB7C7B /* ViewControl.swift */,
 				4F911B462C4050AB00EB7C7B /* Assets */,
 				4F911B202C404B2000EB7C7B /* Preview Content */,
 			);
@@ -269,8 +269,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F911B1D2C404B1E00EB7C7B /* ContentView.swift in Sources */,
-				4F911B1B2C404B1E00EB7C7B /* InspireLoveAppApp.swift in Sources */,
+				4F911B1D2C404B1E00EB7C7B /* ViewControl.swift in Sources */,
+				4F911B1B2C404B1E00EB7C7B /* InspireLoveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
