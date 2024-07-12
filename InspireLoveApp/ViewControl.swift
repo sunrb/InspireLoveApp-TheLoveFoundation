@@ -11,13 +11,14 @@ struct ViewControl: View {
     var body: some View {
         
         NavigationView {
-            VStack (alignment: .leading) {
-                HStack {
-                    LogoImage(imageName: "Heart")
-                    
-                    Text("Inspire Love")
-                        .font(.title2)
-                }
+            ZStack {
+                Image("Background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                
+                Text("quotes")
+
             }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
@@ -58,7 +59,6 @@ struct LogoImage: View {
         Image(imageName)
             .resizable()
             .scaledToFit()
-            .frame(width: 50, height: 50)
-        
+            .frame(width: 30, height: 30)
     }
 }
