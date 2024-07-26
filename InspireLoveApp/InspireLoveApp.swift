@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct InspireLoveApp: App {
+    @State var quotesDataProvider = QuotesDataProvider()
+    
+    init() {
+        loadData()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ViewControl()
+            MainView()
+                .environment(quotesDataProvider)
+        }
+    }
+    
+    func loadData() {
+        Task {
+            await quotesDataProvider.loadData()
         }
     }
 }

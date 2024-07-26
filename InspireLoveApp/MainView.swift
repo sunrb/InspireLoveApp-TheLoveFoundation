@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(QuotesDataProvider.self) var quotesDataProvider
+    @State var currentQuote: String?
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 getBackgroundImage()
                 
@@ -24,6 +25,25 @@ struct MainView: View {
                     getLoadSuccessView()
                 case .error:
                     getRetryView()
+                }
+            }
+            .onTapGesture {
+                showNextQuote()
+            }
+            .onChange(of: quotesDataProvider.status) {
+                switch quotesDataProvider.status {
+                case .initialized, .loading, .error:
+                    currentQuote = nil
+                case .loadSuccess:
+                    showNextQuote()
+                }
+            }
+            .onAppear {
+                switch quotesDataProvider.status {
+                case .initialized, .loading, .error:
+                    return
+                case .loadSuccess:
+                    showNextQuote()
                 }
             }
             .toolbar {
@@ -43,8 +63,15 @@ struct MainView: View {
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.white, for: .navigationBar)
         }
 
+    }
+    
+    func showNextQuote() {
+        currentQuote = quotesDataProvider.quotes.quotesArray.randomElement()
     }
     
     func getBackgroundImage() -> some View {
@@ -56,24 +83,35 @@ struct MainView: View {
     }
     
     func getLoadingView() -> some View {
-        Text("Loading...")
+        Text("Still Loading...")
     }
     
     func getRetryView() -> some View {
         Button {
             print("retry pressed")
+            loadData()
         } label: {
-            Text("Press to retry")
+            Text("Press to Retry")
         }
     }
     
     func getLoadSuccessView() -> some View {
-        Text("Load success")
+        Text("\(currentQuote ?? "Loading...")")
+            .font(.title)
+            .multilineTextAlignment(.center)
+            .padding(10)
+    }
+    
+    func loadData() {
+        Task {
+            await quotesDataProvider.loadData()
+        }
     }
 }
 
 #Preview {
     MainView()
+        .environment(QuotesDataProvider())
 }
 
 struct LogoImage: View {
@@ -86,14 +124,3 @@ struct LogoImage: View {
             .frame(width: 30, height: 30)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
