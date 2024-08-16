@@ -38,7 +38,8 @@ struct AboutUs: View {
             
             Spacer()
         }
-        .offset(y: 50)
+        .padding(.top, 16)
+        .padding(.bottom, 56)
     }
     
     func getBackground() -> some View {

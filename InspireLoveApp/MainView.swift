@@ -70,16 +70,16 @@ struct MainView: View {
 
     }
     
-    func showNextQuote() {
-        currentQuote = quotesDataProvider.quotes.quotesArray.randomElement()
-    }
-    
     func getBackgroundImage() -> some View {
         Image("BackgroundHeart")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(minWidth: 0, maxWidth: .infinity)
             .edgesIgnoringSafeArea(.bottom)
+    }
+    
+    func showNextQuote() {
+        currentQuote = quotesDataProvider.quotes.quotesArray.randomElement()
     }
     
     func getLoadingView() -> some View {
@@ -96,7 +96,7 @@ struct MainView: View {
     }
     
     func getLoadSuccessView() -> some View {
-        Text("\(currentQuote ?? "Loading...")")
+        Text("\(currentQuote ?? "Still Loading...")")
             .font(.title)
             .multilineTextAlignment(.center)
             .padding(10)
